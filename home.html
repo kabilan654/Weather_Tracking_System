@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="style2.css">
+    <script src="jquery-4.0.0.min.js"></script>
+</head>
+<body class="userBody">
+    <div class="navbar">
+        <h2>Weather Portal</h2>
+        <div class="navRight">
+            <button onclick="signOut()">Sign Out</button>
+        </div>
+    </div>
+    <div class="container">
+        <div id="greetuser" class="greetBox"></div>
+        <div class="infoBox">
+            <ul>
+                <li>Welcome to the Weather Portal dashboard.</li>
+                <li>Add your preferred cities to receive updates.</li>
+                <li>View latest weather reports anytime.</li>
+                <li>Monitor temperature and conditions.</li>
+                <li>Manage your preferences easily.</li>
+                <li>Stay updated with accurate data.</li>
+                <li>Modify your cities anytime.</li>
+                <li>Track weather efficiently.</li>
+                <li>Plan your day with weather insights.</li>
+            </ul>
+        </div>
+        <div id="prefSection" class="prefBox">
+            <h3>Add Preference</h3>
+            <input type="text" id="search" placeholder="Search city">
+            <input type="button" value="Add" onclick="addPref()" class="addBtn">
+            <div class="item"><button onclick="pref('Chennai')">Chennai</button></div>
+            <div class="item"><button onclick="pref('Coimbatore')">Coimbatore</button></div>
+            <div class="item"><button onclick="pref('Madurai')">Madurai</button></div>
+            <div class="item"><button onclick="pref('Salem')">Salem</button></div>
+            <div class="item"><button onclick="pref('Tiruchirappalli')">Tiruchirappalli</button></div>
+        </div>
+        <div id="weatherSection" class="weatherBox">
+            <h3>Weather Data</h3>
+            <button onclick="showWeather()" class="showBtn">Show Weather</button>
+            <div id="output" class="weatherGrid"></div>
+        </div>
+    </div>
+<script>
+$(document).ready(function(){
+    $('#search').on("keyup",function(){
+        var value=$(this).val().toLowerCase();
+        $(".item").filter(function(){
+            $(this).toggle($(this).text().toLowerCase().indexOf(value)>-1);
+        });
+    });
+});
+</script>
+<script src="main.js"></script>
+</body>
+</html>

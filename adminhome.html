@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body class="adminBody">
+    <div class="navbar">
+        <h2>Weather Admin Dashboard</h2>
+        <div class="navButtons">
+            <button onclick="signOut()" id="signoutBtn">Sign Out</button>
+        </div>
+    </div>
+    <div class="container">
+        <div id="greetadmin" class="greetBox"></div>
+        <div class="infoBox">
+            <h3>Admin Instructions</h3>
+            <ul>
+                <li>Manage weather data for cities</li>
+                <li>Update temperature and humidity</li>
+                <li>Maintain accurate weather reports</li>
+                <li>Keep the system updated</li>
+                <li>Provide reliable forecasts</li>
+            </ul>
+        </div>
+        <div id="section7" class="weatherBox">
+            <h3>Add Weather Data</h3>
+            <form id="weatherForm" onsubmit="addWeather();return false;">
+                <label>Date</label>
+                <input type="date" id="date" required>
+                <label>City</label>
+                <select id="cityname">
+                    <option value="Chennai">Chennai</option>
+                    <option value="Coimbatore">Coimbatore</option>
+                    <option value="Madurai">Madurai</option>
+                    <option value="Salem">Salem</option>
+                    <option value="Tiruchirappalli">Tiruchirappalli</option>
+                </select>
+                <label>Temperature</label>
+                <input type="number" id="temperature" step="0.01" required>
+                <label>Humidity</label>
+                <input type="number" id="humidity" step="0.01" required>
+                <label>Wind</label>
+                <input type="number" id="wind" step="0.01" required>
+                <label>Weather</label>
+                <div class="radioGroup">
+                    <label><input type="radio" name="weather" value="Sunny" required>Sunny</label>
+                    <label><input type="radio" name="weather" value="Rainy">Rainy</label>
+                    <label><input type="radio" name="weather" value="Cloudy">Cloudy</label>
+                    <label><input type="radio" name="weather" value="Windy">Windy</label>
+                    <label><input type="radio" name="weather" value="Stormy">Stormy</label>
+                </div>
+                <input type="submit" value="Add Weather" class="submitBtn">
+            </form>
+        </div>
+    </div>
+<script src="main.js"></script>
+</body>
+</html>
